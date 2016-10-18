@@ -2,6 +2,7 @@
 	<li *ngFor="let todo of todos" [class.todo--done]="todo.complete" class="todo">
 		<input type="checkbox" (click)="toggleTodoComplete(todo)"/>
 		<span class="todo__title">{{todo.title}}</span>
+		<a routerLink="/detail/{{todo.id}}" routerLinkActive="act">Edit</a>
 		<button (click)="deleteTodo(todo)">Delete</button>
 	</li>
 </ul>

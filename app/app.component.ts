@@ -5,12 +5,11 @@ import {Component} from '@angular/core';
 	template: `
 		<div>
 			<todo-add></todo-add>
-			<todo-list></todo-list>
+			<router-outlet></router-outlet>
 		</div>
 	`
 })
 export class AppComponent { 
 	Constructor(){
-		console.log("asdf");
 	}
 }
