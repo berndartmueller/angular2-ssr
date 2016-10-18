@@ -2,7 +2,12 @@ import {Component} from '@angular/core';
 
 @Component({
 	selector: 'my-app',
-	template: '<h1>Das ist meine erste Angular2 App!!</h1>'
+	template: `
+		<div>
+			<todo-add></todo-add>
+			<todo-list></todo-list>
+		</div>
+	`
 })
 export class AppComponent { 
 	Constructor(){

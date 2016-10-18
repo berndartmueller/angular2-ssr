@@ -4,7 +4,8 @@ var helpers = require('./helpers');
 
 module.exports = {
   entry: {
-    'app': './app/main.ts'
+    'app': './app/main.ts',
+    'polyfills': './app/polyfills.browser.ts'
   },
 
   resolve: {
@@ -20,6 +21,11 @@ module.exports = {
       {
         test: /\.html$/,
         loader: 'html'
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loaders: ['raw-loader', 'sass-loader']
       }
     ]
   },
