@@ -5,6 +5,12 @@
 	list-style-type: none;
 }
 
+.todo 
+{
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
 .todo__title
 {
 
@@ -13,4 +19,5 @@
 .todo--done
 {
 	text-decoration: line-through;
+	font-style: italic;
 }

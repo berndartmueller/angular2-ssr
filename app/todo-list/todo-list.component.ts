@@ -18,4 +18,8 @@ export class TodoList {
 	toggleTodoComplete(todo: Todo) {
 		this.todoService.toggleComplete(todo);
 	}
+
+	deleteTodo(todo: Todo) {
+		this.todoService.deleteTodo(todo);
+	}
 }

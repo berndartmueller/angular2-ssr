@@ -1,4 +1,4 @@
 <div>
-	<input #todo>
+	<input #todo (keyup.enter)="addTodo(todo)">
 	<button (click)="addTodo(todo)">Add todo</button>
 </div>

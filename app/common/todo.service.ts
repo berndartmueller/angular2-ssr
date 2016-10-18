@@ -26,6 +26,17 @@ export class TodoService {
 		});
 	}
 
+	deleteTodo(todo: Todo): boolean {
+		let i = this.todos.indexOf(todo);
+
+		if (i > -1) {
+			this.todos.splice(i, 1);
+			return true;
+		}
+
+		return false;
+	}
+
 	private getTodoById(id: number): Todo {
 		return this.todos.filter(todo => todo.id === id).pop();
 	}
