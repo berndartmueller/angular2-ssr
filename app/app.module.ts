@@ -3,12 +3,16 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {APP_DECLARATIONS} from './app.declarations';
 import {AppComponent} from './app.component';
-import {TodoService} from './common/todo.service';
+import {TodoStore} from './common/stores/todo.store';
+import {TodoActions} from './common/actions/todo.actions'
 
 @NgModule({
 	imports: [BrowserModule],
 	declarations: [AppComponent, ...APP_DECLARATIONS],
 	bootstrap: [AppComponent],
-	providers: [TodoService]
+	providers: [
+		TodoStore,
+		TodoActions
+	]
 })
 export class AppModule { }

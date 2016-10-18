@@ -10,7 +10,5 @@ import {Component} from '@angular/core';
 	`
 })
 export class AppComponent { 
-	Constructor(){
-		console.log("asdf");
-	}
+	constructor(){}
 }

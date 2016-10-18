@@ -2,7 +2,8 @@
   "name": "angular2-ssr",
   "dependencies": {},
   "globalDependencies": {
-  	"core-js": "registry:dt/core-js#0.0.0+20160725163759",
-    "node": "registry:env/node#6.0.0+20161015001438"
+    "core-js": "registry:dt/core-js#0.0.0+20160725163759",
+    "node": "registry:env/node#6.0.0+20161015001438",
+    "redux": "registry:dt/redux#3.5.2+20160703092728"
   }
 }

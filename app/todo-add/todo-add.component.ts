@@ -1,7 +1,7 @@
 import {Component, ViewEncapsulation, Inject} from '@angular/core';
 
-import {Todo} from '../common/todo';
-import {TodoService} from '../common/todo.service'
+import {TodoStore} from '../common/stores/todo.store'
+import {TodoActions} from '../common/actions/todo.actions'
 
 @Component({
 	selector: 'todo-add',
@@ -9,11 +9,13 @@ import {TodoService} from '../common/todo.service'
 	styleUrls: ['./todo-add.component.scss']
 })
 export class TodoAdd {
-	constructor(private todoService: TodoService) {}
+	constructor(private todoStore: TodoStore, private todoActions: TodoActions) {}
 
 	private addTodo(todo: HTMLInputElement) {
-		this.todoService.addTodo(new Todo({title: todo.value}));
+		this.todoStore.dispatch(
+			this.todoActions.addTodo(todo.value)
+		);
 
-		todo.value = ""
+		todo.value = "";
 	}
 }

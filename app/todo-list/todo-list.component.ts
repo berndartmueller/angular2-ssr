@@ -1,7 +1,8 @@
 import {Component, Inject} from '@angular/core';
 
-import {TodoService} from '../common/todo.service'
-import {Todo} from '../common/todo'
+import {TodoStore} from '../common/stores/todo.store'
+import {TodoActions} from '../common/actions/todo.actions'
+import {Todo} from '../common/models/todo'
 
 @Component({
 	selector: 'todo-list',
@@ -9,17 +10,23 @@ import {Todo} from '../common/todo'
 	styleUrls: ['./todo-list.component.scss']
 })
 export class TodoList {
-	constructor(private todoService: TodoService) {}
+	todos: Todo[] = [];
 
-	get todos() {
-		return this.todoService.getTodos();
+	constructor(private todoStore: TodoStore, private todoActions: TodoActions) {
+		this.todoStore.store.subscribe(() => {
+			this.todos = this.todoStore.store.getState().todos;
+		})
 	}
 
 	toggleTodoComplete(todo: Todo) {
-		this.todoService.toggleComplete(todo);
+		this.todoStore.dispatch(
+			this.todoActions.toggleTodoComplete(todo.id)
+		);
 	}
 
 	deleteTodo(todo: Todo) {
-		this.todoService.deleteTodo(todo);
+		this.todoStore.dispatch(
+			this.todoActions.deleteTodo(todo.id)
+		)
 	}
 }
