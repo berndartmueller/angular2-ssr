@@ -1,19 +1,12 @@
 var webpackMerge = require('webpack-merge');
 var commonConfig = require('./webpack.common.js');
-var helpers = require('./helpers');
+var clientConfig = require('./webpack.client.js');
+var serverConfig = require('./webpack.server.js');
 
-module.exports = webpackMerge(commonConfig, {
-  devtool: 'cheap-module-eval-source-map',
+module.exports = [
+  // Client
+  webpackMerge({}, commonConfig, clientConfig),
 
-  output: {
-    path: helpers.root('dist'),
-    publicPath: 'http://localhost:8080/',
-    filename: '[name].js',
-    chunkFilename: '[id].chunk.js'
-  },
-
-  devServer: {
-    historyApiFallback: true,
-    stats: 'minimal'
-  }
-});
+  // Server
+  webpackMerge({}, commonConfig, serverConfig)
+];
