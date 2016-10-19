@@ -12,7 +12,10 @@
     "type": "git",
     "url": "git+https://github.com/berndartmueller/angular2-ssr.git"
   },
-  "author": "",
+  "author": "Bernd Artmüller <berndartmueller@gmail.com>",
+  "contributors": [
+    "Bernd Artmüller <berndartmueller@gmail.com>"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/berndartmueller/angular2-ssr/issues"
